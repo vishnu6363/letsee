@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <style>
+          .badge {
+             position: absolute;
+             bottom:0px;
+             right: 50px;
+          }
+            .botright    
+              {
+	          display:block;       
+	          bottom:0;    
+	          left:0;    
+	          width:550px;        
+	          height:350px;   
+              background-repeat: no-repeat;
+	          background- left; 
+            }
+            .gfg 
+              {
+                margin: auto    ;
+                position: relative;
+                
+              }
+      
+            .first-txt 
+            {
+             position: absolute; /* Position the background text */
+             top: 0; /* At the bottom. Use top:0 to append it to the top */
+             background: rgb(0, 0, 0); /* Fallback color */
+             background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+             color: #f1f1f1; /* Grey text */
+             width: 64%; /* Full width */
+             padding: 20px; /* Some padding */
+            }
+            .first-txt2 
+            {
+             position: absolute; /* Position the background text */
+             top: 70; /* At the bottom. Use top:0 to append it to the top */
+             
+             color: #f1f1f1; /* Grey text */
+             
+             padding: 20px; /* Some padding */
+            }
+            
+            .result-txt 
+            {
+             position: absolute; /* Position the background text */
+             right: 10; /* At the bottom. Use top:0 to append it to the top */
+             background: 0; /* Fallback color */
+             background: 0; /* Black background with 0.5 opacity */
+             color: #f1f1f1; /* Grey text */
+             width: 49%; /* Full width */
+             height:20%;
+             padding: 20px; /* Some padding */
+            }
+
+            .first
+            {
+              position: absolute; /* Position the background text */
+              background: rgb(0, 0, 0); /* Fallback color */
+              background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+              color: #f1f1f1; /* Grey text */
+              width:40%; /* Full width */
+              height: 20cm;
+              padding: 10px; /* Some padding */ 
+            }
+        </style>
+        <body>
+            <div class="gfg">
+                <img  width="1250" src="https://www.bayer.com/sites/default/files/styles/1180x565/public/2022-05/this.jpg?h=4760851d&itok=OMFcZ4wk">
+            </div>
+            <h1 class="first-txt">
+                Find out the most suitable crop to grow in your farm
+ 
+            </h1>
+            <h1 class="first-txt2" style="color:red; bold:1">Crop prediction attributes are defined <br>
+              by multiple factors such as genotype, <br>
+              climate and the interactions between<br> 
+              the two Accurate crop prediction<br> 
+              needs a fundamental understanding <br>
+               of the functional relationship <br>
+               between cultivation and<br> 
+               interactive factors like the <br>
+               genotype and climate.</h1>
+        </body>
+        <body>
+            <div class="first";
+                 style="
+                      width: 540px;
+                      height: 44rem;
+                      color: black;
+                      border-radius: 30px;
+                      padding: 20px 20px;"  >
+                      <h1 style="text-align: auto; margin: 10px; color: #8bcd3f">
+                        <b>Find which crop is best for your farm</b>
+                      </h1><br>
+
+
+
+                      <form method="POST" action="{{url_for('crop_predict')}}">
+              
+                        <label for="Nitrogen" style="font-size:25px; color:green;"><b>NITROGEN</b></label><br>
+                      <input
+                      
+                        type="number"
+                        min="0"
+                        max="150"
+                        id="Nitrogen"
+                        name="nitrogen"
+                        ran
+                        placeholder="Enter the value (example:50)"
+                        style="
+                        font-weight: bold;
+                        height:1cm;
+                        width:8cm"
+                        required
+                      ><br><br>
+                      
+                      <label for="phosphorus" style="font-size: 25px; color:green"><b>PHOSPHORUS</b></label><br>
+                      <input
+                        type="number"
+                        max="140"
+                        id="Phosphorus"
+                        name="phosphorus"
+                        placeholder="Enter the value (example:50)"
+                        style="
+                        font-weight: bold;
+                        height:1cm;
+                        width:8cm"
+                        required
+                      ><br><br>
+                      
+                     
+                      <label for="potasium" style="font-size: 25px; color:green"><b>POTASIUM</b></label><br>
+                      <input
+                        type="number"
+                        max="220"
+                        id="Potasium"
+                        name="potasium"
+                        placeholder="Enter the value (example:50)"
+                        style="
+                        font-weight: bold;
+                        height:1cm;
+                        width:8cm"
+                        required
+                      ><br><br>
+                      <label for="rainfall" style="font-size: 25px; color:green"><b>RAIN FALL</b></label><br>
+                      <input
+                        type="number"
+                        max="300"
+                        id="rainfall"
+                        name="rainfall"
+                        placeholder="Enter the value (example:100)"
+                        style="
+                        font-weight: bold;
+                        height:1cm;
+                        width:8cm"
+                        required
+                      ><br><br>
+        
+                      <label for="ph" style="font-size: 25px; color:green"><b>PH LEVEL</b></label><br>
+                      <input
+                        type="number"
+                        max="10"
+                        id="ph"
+                        name="ph"
+                        placeholder="Enter the value (example:6)"
+                        style="
+                        font-weight: bold;
+                        height:1cm;
+                        width:8cm"
+                        required
+                      ><br><br>
+                      <label for="temperature" style="font-size: 25px; color:green"><b>TEMPARETURE</b></label><br>
+                      <input
+                        type="number"
+                        id="temp"
+                        name="temp"
+                        placeholder="Enter temperature in celsius (examp:20)"
+                        style="
+                        font-weight: bold;
+                        height:1cm;
+                        width:8cm"
+                        required
+                      ><br><br>
+                      <label for="humidity" style="font-size: 25px; color:green"><b>HUMIDITY</b></label><br>
+                      <input
+                        type="number"
+                        min="0"
+                        max="150"
+                        id="humidity"
+                        name="humidity"
+                        placeholder="Enter the value (example:70)"
+                        style="
+                        font-weight: bold;
+                        height:1cm;
+                        width:8cm"
+                        required
+                      ><br><br> 
+                      
+                      <button
+                        type="submit"
+                        class="btn btn-info"
+                        style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px; background:lightblue;"
+                      >PREDICT</button>
+
+                      </form>
+
+
+                    </div>
+        </body>
+        <body>
+          
+          <div <div style="bottom:30cm;">
+       
+          
+          <img align="right"   height="750" width="1670" src="https://carolinafreshfarms.com/wp-content/uploads/2021/05/cff-soil-test-new.jpg" >
+       
+          
+          </div>
+          </div>
+      </body>
+      <body>
+        <div class="result-txt"
+        style="
+        right:2cm
+        bottom:5cm">
+        <h1>
+          {{prediction}}</h2> 
+
+        </div>
+      </body>
+    </body>
+</html>
