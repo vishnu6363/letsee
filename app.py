@@ -1,30 +1,18 @@
 from flask import Flask,request,render_template,url_for
 import numpy as np
 import pickle
-
-
-
-
-
-
 crop_recommendation_model_path = 'RandomForest.pkl'
 crop_recommendation_model = pickle.load(
     open(crop_recommendation_model_path, 'rb'))
-
-
 app=Flask(__name__)
-
-@app.route('/')
+@ app.route('/')
 def openpage():
     return render_template('index.html')
-
 @ app.route('/crop-predict', methods=['POST'])
 def crop_predict():
     title = 'Harvestify - Crop Recommendation'
-
     if request.method == 'POST':
         N = int(request.form['nitrogen'])
-
         P = int(request.form['phosphorus'])
         K = int(request.form['potasium'])
         ph = float(request.form['ph'])
@@ -125,10 +113,8 @@ def crop_predict():
         elif final_prediction=="coffee":
             text="You should Grow  in your From.\nWhile soil is frequently referred to as the fertile substrate, not all soils are suitable for growing crops. Ideal soils for agriculture are balanced in contributions from mineral components (sand: 0.05–2 mm, silt: 0.002–0.05 mm, clay: <0.002 mm), soil organic matter (SOM), air, and water."
             return render_template('index.html',prediction=text)
-        else:
-        
-
+        else:      
            return render_template('index.html', prediction='You should grow {} in your form'.format(final_prediction))
-if(__name__=='__main__'):
+if(__name__=="__main__"):
     app.run(debug=True)
 
